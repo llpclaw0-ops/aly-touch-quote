@@ -9,7 +9,7 @@
 
 const SITE = {
   name:    "The Aly Touch",
-  tagline: "Home cleaning, finishing touches like ovens, fridges and windows, and one-off jobs from deep cleans to end of tenancy",
+  tagline: "Home cleaning, extra jobs like ovens, fridges and windows, and one-off jobs from deep cleans to end of tenancy",
   phone:   "07781 446239",
 
   // Where the service operates. Used in headings, the footer and the schema
