@@ -37,59 +37,58 @@
   .qz-phone { margin-top: 40px; text-align: center; color: #6b6255; font-size: 14px; }
   .qz-phone a { color: #b3742c; font-weight: 600; }
   [hidden] { display: none !important; }
+  .qz-brand { color: #0b2341; text-decoration:none; }
+  .qz-field input, .qz-field select, .qz-field textarea { font-size:16px !important; }
+  .qz-phone a { color:#8f5326; }
+  [data-qz-summary] dt { font-weight:600; margin-top:12px; }
+  [data-qz-summary] dd { margin:3px 0 0; white-space:pre-wrap; overflow-wrap:anywhere; }
+  .qz-step h1 { font-size:clamp(1.85rem,6vw,2.7rem); }
+  @media(max-width:359px) { .qz-choice-grid { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
-<main class="qz-shell">
-  <div class="qz-brand">
+<main class="qz-shell" id="main">
+  <a class="qz-brand" href="https://thealytouch.co.uk/" aria-label="The Aly Touch home">
     <img src="img/the-aly-touch-logo.png" alt="The Aly Touch">
     <span>The Aly Touch</span>
-  </div>
-  <p class="qz-step-label" data-qz-steplabel>Step 1 of 5 &middot; Your details</p>
+  </a>
+  <p class="qz-step-label" data-qz-steplabel aria-live="polite">Step 1 of 5 &middot; Your details</p>
   <div class="qz-progress"><span data-qz-progressbar style="width:20%"></span></div>
 
+  <noscript><p>This questionnaire needs JavaScript. Please call <a href="tel:07781446239">07781 446239</a> to discuss your clean.</p></noscript>
   <form id="quoteQuiz" novalidate>
     <!-- Step 1: Your details -->
     <section class="qz-step active" data-qz-step="0">
-      <h1>Let's start with you.</h1>
-      <p>We'll only use these details to prepare and discuss your quote.</p>
+      <h1>Your cleaning enquiry</h1>
+      <p>Spoken to Aly? Share the details here. Five short steps help her prepare your Guernsey cleaning quote. Nothing is booked until you agree the price and timing. <a href="https://thealytouch.co.uk/privacy.html">How your details are used</a>.</p>
       <label class="qz-field">Your name *<input type="text" name="name" required autocomplete="name"></label>
-      <label class="qz-field">Property postcode *<input type="text" name="postcode" required autocomplete="postal-code" placeholder="e.g. GY1 1AA"></label>
+      <label class="qz-field">Property postcode or parish *<input type="text" name="postcode" required autocomplete="postal-code" placeholder="e.g. GY1 1AA or St Peter Port"></label>
       <label class="qz-field">Property address <input type="text" name="address" autocomplete="street-address" placeholder="House number and street (optional)"></label>
-      <div class="qz-field">
-        <label>How should we contact you? *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="contactMethod">
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>How should we contact you? *</legend><div class="qz-choice-grid" data-qz-radiogroup="contactMethod">
           <label class="qz-choice"><input type="radio" name="contactMethod" value="phone" checked><span>Phone call</span></label>
           <label class="qz-choice"><input type="radio" name="contactMethod" value="text"><span>Text message</span></label>
           <label class="qz-choice"><input type="radio" name="contactMethod" value="whatsapp"><span>WhatsApp</span></label>
           <label class="qz-choice"><input type="radio" name="contactMethod" value="email"><span>Email</span></label>
-        </div>
-      </div>
-      <label class="qz-field"><span data-qz-contactlabel>Mobile number</span> *<input type="tel" name="contactDetail" required placeholder="07xxx xxxxxx"></label>
+        </div></fieldset>
+      <label class="qz-field"><span data-qz-contactlabel>Mobile number</span> *<input type="tel" name="contactDetail" autocomplete="tel" required placeholder="07xxx xxxxxx"></label>
     </section>
 
     <!-- Step 2: The clean -->
     <section class="qz-step" data-qz-step="1">
       <h1>What would you like cleaned?</h1>
-      <div class="qz-field">
-        <label>Type of clean *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="service">
-          <label class="qz-choice"><input type="radio" name="service" value="regular" checked><span>Regular clean</span></label>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Type of clean *</legend><div class="qz-choice-grid" data-qz-radiogroup="service">
+          <label class="qz-choice"><input type="radio" name="service" value="regular" required><span>Regular clean</span></label>
           <label class="qz-choice"><input type="radio" name="service" value="deep"><span>Deep / one-off spring clean</span></label>
           <label class="qz-choice"><input type="radio" name="service" value="tenancy"><span>End of tenancy, move in or out</span></label>
           <label class="qz-choice"><input type="radio" name="service" value="builders"><span>After builders</span></label>
           <label class="qz-choice"><input type="radio" name="service" value="holiday"><span>Holiday let changeover</span></label>
-        </div>
-      </div>
-      <div class="qz-field">
-        <label>Property type *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="propertyType">
+        </div></fieldset>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Property type *</legend><div class="qz-choice-grid" data-qz-radiogroup="propertyType">
           <label class="qz-choice"><input type="radio" name="propertyType" value="house" checked><span>House</span></label>
           <label class="qz-choice"><input type="radio" name="propertyType" value="flat"><span>Flat</span></label>
           <label class="qz-choice"><input type="radio" name="propertyType" value="bungalow"><span>Bungalow</span></label>
           <label class="qz-choice"><input type="radio" name="propertyType" value="other"><span>Other</span></label>
-        </div>
-      </div>
+        </div></fieldset>
       <div style="display:flex; gap:16px; flex-wrap:wrap;">
         <label class="qz-field" style="flex:1; min-width:140px;">Bedrooms *
           <select name="bedrooms" required><option>0</option><option selected>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select>
@@ -98,83 +97,64 @@
           <select name="bathrooms" required><option selected>1</option><option>2</option><option>3</option><option>4+</option></select>
         </label>
       </div>
-      <div class="qz-field">
-        <label>Current general condition *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="condition">
-          <label class="qz-choice"><input type="radio" name="condition" value="light" checked><span>Lightly used</span></label>
-          <label class="qz-choice"><input type="radio" name="condition" value="general"><span>Needs a good general clean</span></label>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Current general condition *</legend><div class="qz-choice-grid" data-qz-radiogroup="condition">
+          <label class="qz-choice"><input type="radio" name="condition" value="light"><span>Lightly used</span></label>
+          <label class="qz-choice"><input type="radio" name="condition" value="general" checked><span>Needs a good general clean</span></label>
           <label class="qz-choice"><input type="radio" name="condition" value="heavy"><span>Heavier build-up</span></label>
-        </div>
-      </div>
-      <div class="qz-field">
-        <label>How often? *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="frequency">
+        </div></fieldset>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>How often? *</legend><div class="qz-choice-grid" data-qz-radiogroup="frequency">
           <label class="qz-choice"><input type="radio" name="frequency" value="oneoff" checked><span>One-off clean</span></label>
           <label class="qz-choice"><input type="radio" name="frequency" value="weekly"><span>Weekly</span></label>
           <label class="qz-choice"><input type="radio" name="frequency" value="fortnightly"><span>Every two weeks</span></label>
           <label class="qz-choice"><input type="radio" name="frequency" value="monthly"><span>Monthly</span></label>
-        </div>
-      </div>
+        </div></fieldset>
     </section>
 
     <!-- Step 3: Rooms & extras -->
     <section class="qz-step" data-qz-step="2">
       <h1>Rooms and extras.</h1>
       <p>Choose anything useful for an accurate quote. You can add notes further on.</p>
-      <div class="qz-field">
-        <label>Which areas need cleaning?</label>
-        <div class="qz-choice-grid">
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Which areas need cleaning?</legend><div class="qz-choice-grid">
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Kitchen"><span>Kitchen</span></label>
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Bathroom(s)"><span>Bathroom(s)</span></label>
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Bedrooms"><span>Bedrooms</span></label>
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Living / dining"><span>Living / dining</span></label>
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Hallway / stairs"><span>Hallway / stairs</span></label>
           <label class="qz-choice"><input type="checkbox" name="rooms" value="Utility room"><span>Utility room</span></label>
-        </div>
-      </div>
-      <div class="qz-field">
-        <label>Any particular extras or problem areas?</label>
-        <div class="qz-choice-grid">
+        </div></fieldset>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Any particular extras or problem areas?</legend><div class="qz-choice-grid">
           <label class="qz-choice"><input type="checkbox" name="addons" value="Oven inside"><span>Oven inside</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Inside fridges"><span>Inside fridges</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Inside cupboards"><span>Inside cupboards</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Windows inside"><span>Windows inside</span></label>
-          <label class="qz-choice"><input type="checkbox" name="addons" value="Reachable outside windows"><span>Outside windows</span></label>
+          <label class="qz-choice"><input type="checkbox" name="addons" value="Reachable outside windows"><span>Outside windows reachable from the ground</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Limescale / mould attention"><span>Limescale / mould</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Skirtings & polishing"><span>Skirtings & polishing</span></label>
           <label class="qz-choice"><input type="checkbox" name="addons" value="Hoovering / vacuuming"><span>Hoovering / vacuuming</span></label>
-        </div>
-      </div>
+          <label class="qz-choice"><input type="checkbox" name="addons" value="Beds & linen care"><span>Beds & linen care</span></label>
+        </div></fieldset>
       <label class="qz-field">Anything specific to flag? <textarea name="roomNotes" maxlength="300" placeholder="For example, a built-up oven or a room to prioritise."></textarea></label>
     </section>
 
     <!-- Step 4: Access & practical details -->
     <section class="qz-step" data-qz-step="3">
-      <h1>A few practical details.</h1>
-      <div class="qz-field">
-        <label>How will the cleaner get in? *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="access">
+      <h1>A few practical details.</h1><p>Please do not include key-safe codes, alarm codes or private documents. Access arrangements can be discussed later.</p>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>How will the cleaner get in? *</legend><div class="qz-choice-grid" data-qz-radiogroup="access">
           <label class="qz-choice"><input type="radio" name="access" value="home" checked><span>Someone will be home</span></label>
           <label class="qz-choice"><input type="radio" name="access" value="keySafe"><span>Key safe (code later)</span></label>
           <label class="qz-choice"><input type="radio" name="access" value="agent"><span>Neighbour / agent</span></label>
           <label class="qz-choice"><input type="radio" name="access" value="other"><span>Other</span></label>
-        </div>
-      </div>
-      <div class="qz-field">
-        <label>Parking near the property *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="parking">
+        </div></fieldset>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Parking near the property *</legend><div class="qz-choice-grid" data-qz-radiogroup="parking">
           <label class="qz-choice"><input type="radio" name="parking" value="free" checked><span>Free parking</span></label>
           <label class="qz-choice"><input type="radio" name="parking" value="paid"><span>Paid / permit parking</span></label>
           <label class="qz-choice"><input type="radio" name="parking" value="none"><span>No nearby parking</span></label>
-        </div>
-      </div>
-      <div class="qz-field">
-        <label>Any pets at home? *</label>
-        <div class="qz-choice-grid" data-qz-radiogroup="pets">
+        </div></fieldset>
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Any pets at home? *</legend><div class="qz-choice-grid" data-qz-radiogroup="pets">
           <label class="qz-choice"><input type="radio" name="pets" value="no" checked><span>No</span></label>
           <label class="qz-choice"><input type="radio" name="pets" value="yes"><span>Yes</span></label>
-        </div>
-      </div>
+        </div></fieldset>
+      <label class="qz-field">When would you like the clean? <input type="text" name="preferredTiming" maxlength="150" placeholder="For example, next week or before moving out"></label>
       <label class="qz-field">Best time to contact you *
         <select name="contactTime" required><option value="morning">Morning</option><option value="afternoon">Afternoon</option><option value="evening">Evening</option><option value="anytime" selected>Anytime</option></select>
       </label>
@@ -187,7 +167,7 @@
       <div data-qz-summary style="background: rgba(0,0,0,0.03); border-radius: 10px; padding: 16px; margin-bottom: 18px;"></div>
       <label class="qz-field" style="display:flex; align-items:flex-start; gap:10px;">
         <input type="checkbox" name="serviceConsent" value="yes" required style="margin-top:4px;">
-        <span>I agree that The Aly Touch may contact me about this enquiry using my chosen contact method. *</span>
+        <span>I agree that The Aly Touch may contact me about this enquiry using my chosen contact method. Read the <a href="https://thealytouch.co.uk/privacy.html">privacy policy</a>. *</span>
       </label>
       <label class="qz-field" style="display:flex; align-items:flex-start; gap:10px;">
         <input type="checkbox" name="marketingConsent" value="yes" style="margin-top:4px;">
@@ -225,36 +205,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const errorEl = document.querySelector('[data-qz-error]');
   const stepNames = ["Your details", "The clean", "Rooms & extras", "Access", "Review"];
   let current = 0;
+  let sending = false;
 
-  document.querySelectorAll('[data-qz-radiogroup]').forEach(group => {
-    group.addEventListener('click', e => {
-      const label = e.target.closest('.qz-choice');
-      if (!label) return;
-      group.querySelectorAll('.qz-choice').forEach(l => l.classList.remove('selected'));
-      label.classList.add('selected');
-    });
-    const checked = group.querySelector('input:checked');
-    if (checked) checked.closest('.qz-choice').classList.add('selected');
+  form.addEventListener('change', () => {
+    form.querySelectorAll('.qz-choice').forEach(label => label.classList.toggle('selected', label.querySelector('input').checked));
   });
-  document.querySelectorAll('.qz-choice-grid:not([data-qz-radiogroup])').forEach(group => {
-    group.addEventListener('click', e => {
-      const label = e.target.closest('.qz-choice');
-      if (!label) return;
-      const input = label.querySelector('input');
-      if (input && input.type === 'checkbox') label.classList.toggle('selected', input.checked);
-    });
-  });
+  form.querySelectorAll('.qz-choice').forEach(label => label.classList.toggle('selected', label.querySelector('input').checked));
 
   document.querySelectorAll('input[name=contactMethod]').forEach(r => {
     r.addEventListener('change', () => {
       const label = document.querySelector('[data-qz-contactlabel]');
       const input = document.querySelector('input[name=contactDetail]');
-      if (r.value === 'email' && r.checked) { label.textContent = 'Email address'; input.type = 'email'; input.placeholder = 'you@example.com'; }
-      else if (r.checked) { label.textContent = 'Mobile number'; input.type = 'tel'; input.placeholder = '07xxx xxxxxx'; }
+      if (r.value === 'email' && r.checked) { label.textContent = 'Email address'; input.type = 'email'; input.autocomplete = 'email'; input.placeholder = 'you@example.com'; }
+      else if (r.checked) { label.textContent = 'Mobile number'; input.type = 'tel'; input.autocomplete = 'tel'; input.placeholder = '07xxx xxxxxx'; }
     });
   });
 
-  function showStep(index) {
+  function showStep(index, moveFocus = true) {
     steps.forEach((s, i) => s.classList.toggle('active', i === index));
     current = index;
     stepLabel.textContent = `Step ${index + 1} of ${steps.length} \u00b7 ${stepNames[index]}`;
@@ -264,7 +231,10 @@ document.addEventListener('DOMContentLoaded', () => {
     nextBtn.hidden = isLast;
     submitBtn.hidden = !isLast;
     if (isLast) renderSummary();
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const heading = steps[index].querySelector('h1');
+    heading.tabIndex = -1; if (moveFocus) heading.focus({preventScroll: true});
+    errorEl.hidden = true;
+    window.scrollTo({ top: 0, behavior: 'auto' });
   }
 
   function currentStepValid() {
@@ -277,13 +247,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function renderSummary() {
     const data = new FormData(form);
-    const name = data.get('name') || 'Your name';
-    const postcode = data.get('postcode') || 'Postcode';
-    const service = document.querySelector('input[name=service]:checked')?.parentElement.textContent.trim() || '';
-    const bedrooms = data.get('bedrooms'); const bathrooms = data.get('bathrooms');
-    const propertyType = document.querySelector('input[name=propertyType]:checked')?.parentElement.textContent.trim() || '';
-    document.querySelector('[data-qz-summary]').innerHTML =
-      `<strong>${name}</strong><br>${postcode} &middot; ${service}<br>${propertyType} &middot; ${bedrooms} bedroom(s) &middot; ${bathrooms} bathroom(s)`;
+    const summary = document.querySelector('[data-qz-summary]');
+    summary.replaceChildren();
+    const list = document.createElement('dl');
+    for (const [key, label] of Object.entries(FIELD_LABELS)) {
+      if (key === 'serviceConsent' || key === 'marketingConsent') continue;
+      const term = document.createElement('dt');
+      const detail = document.createElement('dd');
+      term.textContent = label.replaceAll('-', ' ');
+      detail.textContent = data.getAll(key).map(value => labelValue(key, value)).join(', ') || 'Not provided';
+      list.append(term, detail);
+    }
+    summary.append(list);
   }
 
   nextBtn.addEventListener('click', () => { if (currentStepValid() && current < steps.length - 1) showStep(current + 1); });
@@ -312,6 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     parking: 'Parking',
     pets: 'Pets-at-home',
     contactTime: 'Best-time-to-contact',
+    preferredTiming: 'Preferred-cleaning-date-or-timing',
     serviceConsent: 'Agreed-to-be-contacted',
     marketingConsent: 'Wants-marketing-updates'
   };
@@ -331,7 +307,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   form.addEventListener('submit', async e => {
     e.preventDefault();
-    if (!currentStepValid()) return;
+    if (sending) return;
+    if (current < steps.length - 1) {
+      if (currentStepValid()) showStep(current + 1);
+      return;
+    }
+    if (form.elements._honey.value) return;
+    for (let i = 0; i < steps.length; i++) {
+      const invalid = steps[i].querySelector('input:invalid, select:invalid, textarea:invalid');
+      if (invalid) { showStep(i); invalid.reportValidity(); return; }
+    }
+    sending = true;
+    backBtn.disabled = true;
+    form.setAttribute('aria-busy', 'true');
     errorEl.hidden = true;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending\u2026';
@@ -341,38 +329,45 @@ document.addEventListener('DOMContentLoaded', () => {
     const addons = data.getAll('addons');
     const payload = new FormData();
     for (const [key, value] of data.entries()) {
-      if (key === 'rooms' || key === 'addons' || key === '_honey') continue;
+      if (key === 'rooms' || key === 'addons') continue;
       payload.append(labelKey(key), labelValue(key, value));
     }
     payload.append(labelKey('rooms'), rooms.join('\n') || 'None selected');
     payload.append(labelKey('addons'), addons.join('\n') || 'None selected');
     payload.append('_subject', 'New enquiry - The Aly Touch quote quiz');
     payload.append('_captcha', 'false');
+    payload.append('_template', 'table');
+    if (data.get('contactMethod') === 'email') payload.append('_replyto', data.get('contactDetail'));
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 20000);
 
     try {
       const response = await fetch('https://formsubmit.co/ajax/contact@thealytouch.co.uk', {
         method: 'POST',
         headers: { 'Accept': 'application/json' },
-        body: payload
+        body: payload,
+        signal: controller.signal
       });
       let result = null;
       try { result = await response.json(); } catch (parseErr) { /* endpoint returned non-JSON; treat as failure below */ }
       const delivered = response.ok && result && (result.success === true || result.success === 'true');
       if (!delivered) throw new Error('Delivery unavailable');
       form.hidden = true;
-      document.querySelector('[data-qz-success]').hidden = false;
+      const success = document.querySelector('[data-qz-success]');
+      success.hidden = false; success.tabIndex = -1; success.focus();
       document.querySelector('[data-qz-progressbar]').parentElement.hidden = true;
       stepLabel.hidden = true;
     } catch (err) {
-      errorEl.textContent = 'We could not send your enquiry just now. Please call 07781 446239 instead.';
+      errorEl.textContent = 'We could not confirm your enquiry was sent. Your answers are still here. Please call 07781 446239 before retrying if you are unsure.';
       errorEl.hidden = false;
     } finally {
+      clearTimeout(timeout); sending = false; backBtn.disabled = false; form.removeAttribute('aria-busy');
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send my enquiry';
     }
   });
 
-  showStep(0);
+  showStep(0, false);
 });
 </script>
 </body>
