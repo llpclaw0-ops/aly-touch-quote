@@ -150,9 +150,11 @@
           <label class="qz-choice"><input type="radio" name="parking" value="paid"><span>Paid / permit parking</span></label>
           <label class="qz-choice"><input type="radio" name="parking" value="none"><span>No nearby parking</span></label>
         </div></fieldset>
-      <fieldset class="qz-field" style="border:0;padding:0"><legend>Any pets at home? *</legend><div class="qz-choice-grid" data-qz-radiogroup="pets">
+      <fieldset class="qz-field" style="border:0;padding:0"><legend>Do you have dogs or cats? *</legend><div class="qz-choice-grid" data-qz-radiogroup="pets">
           <label class="qz-choice"><input type="radio" name="pets" value="no" checked><span>No</span></label>
-          <label class="qz-choice"><input type="radio" name="pets" value="yes"><span>Yes</span></label>
+          <label class="qz-choice"><input type="radio" name="pets" value="dogs"><span>Dogs</span></label>
+          <label class="qz-choice"><input type="radio" name="pets" value="cats"><span>Cats</span></label>
+          <label class="qz-choice"><input type="radio" name="pets" value="both"><span>Dogs and cats</span></label>
         </div></fieldset>
       <label class="qz-field">When would you like the clean? <input type="text" name="preferredTiming" maxlength="150" placeholder="For example, next week or before moving out"></label>
       <label class="qz-field">Best time to contact you *
@@ -285,7 +287,7 @@ document.addEventListener('DOMContentLoaded', () => {
     roomNotes: 'Anything-to-flag',
     access: 'How-the-cleaner-gets-in',
     parking: 'Parking',
-    pets: 'Pets-at-home',
+    pets: 'Dogs-or-cats',
     contactTime: 'Best-time-to-contact',
     preferredTiming: 'Preferred-cleaning-date-or-timing',
     serviceConsent: 'Agreed-to-be-contacted',
@@ -299,7 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
     frequency: { oneoff: 'One-off clean', weekly: 'Weekly', fortnightly: 'Every two weeks', monthly: 'Monthly' },
     access: { home: 'Someone will be home', keySafe: 'Key safe (code later)', agent: 'Neighbour / agent', other: 'Other' },
     parking: { free: 'Free parking', paid: 'Paid / permit parking', none: 'No nearby parking' },
-    pets: { no: 'No', yes: 'Yes' },
+    pets: { no: 'No', dogs: 'Dogs', cats: 'Cats', both: 'Dogs and cats' },
     contactTime: { morning: 'Morning', afternoon: 'Afternoon', evening: 'Evening', anytime: 'Anytime' }
   };
   const labelKey = key => FIELD_LABELS[key] || key;
